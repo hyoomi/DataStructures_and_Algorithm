@@ -37,4 +37,11 @@ public:
     T* end() { return data + n; }
     const T* end() const { return data + n; }
 
+    friend my_array<T> operator+(const my_array<T>& arr1, my_array<T>& arr2){
+        my_array<T> sum(arr1.size() + arr2.size());
+        std::copy(arr1.begin(), arr1.end(), sum.begin());
+        std::copy(arr2.begin(), arr2.end(), sum.begin() + arr1.size());
+        return sum;                        
+    }
+
 }
