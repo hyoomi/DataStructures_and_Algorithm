@@ -44,4 +44,18 @@ public:
         return sum;                        
     }
 
+};
+
+struct person{
+    std::string name;
+    int gender; //male:0,  female:1
+};
+
+std::ostream& operator<<(std::ostream& os, const person& p){
+    if(p.gender == 1)
+        return (os << "[" << p.name << ", male]");
+    else if(p.gender == 2)
+        return (os << "[" << p.name << ", female]");
+    else
+        return (os <<"[" << p.name << ", none]");
 }
