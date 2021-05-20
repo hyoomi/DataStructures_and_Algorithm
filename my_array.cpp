@@ -59,3 +59,20 @@ std::ostream& operator<<(std::ostream& os, const person& p){
     else
         return (os <<"[" << p.name << ", none]");
 }
+
+int main(){
+    int numPerson;
+    std::cout << "사람 수를 입력하시오: ";
+    std::cin >> numPerson;
+
+    my_array<person> p1(numPerson);
+    for(int i = 0; i < numPerson; i++){
+        std::string name;
+        int gender;
+        std::cout << i + 1 << "번째 사람 이름과 성별(0:male, 1:female)을 입력하시오: ";
+        std::cin >> name >> gender;
+        p1[i] = person{name, gender};
+    }
+
+    return 0;
+}
