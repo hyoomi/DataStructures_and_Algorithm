@@ -26,3 +26,12 @@ public:
         }
     }
 }
+
+struct my_list_iterator{
+private:
+    node* it;
+public:
+    my_list_iterator(node* i) : it(i) {}
+    int& operator*() { return it->data; }
+    node* get() { return it; }
+}
