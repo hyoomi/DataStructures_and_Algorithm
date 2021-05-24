@@ -44,4 +44,10 @@ public:
         ++(*this);
         return result;
     }
+    friend bool operator==(const my_list_iterator& left, const my_list_iterator& right){
+        return left.it == right.it;
+    }
+    friend bool operator!=(const my_list_iterator& left, const my_list_iterator& right){
+        return left.it != right.it;
+    }
 }
