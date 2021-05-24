@@ -33,5 +33,15 @@ private:
 public:
     my_list_iterator(node* i) : it(i) {}
     int& operator*() { return it->data; }
-    node* get() { return it; }
+    node* get() { return it; }   
+
+    my_list_iterator& operator++(){ //선행 증가
+        it = it->next;
+        return *this;
+    }
+    my_list_iterator operator++(int){ //후행 증가
+        my_list_iterator result = *this;
+        ++(*this);
+        return result;
+    }
 }
